@@ -5,10 +5,6 @@ using System.Text;
 
 namespace VictorKrogh.NET.Authentication.DependencyInjection;
 
-public interface IJwtAuthenticationOptions : IJwtTokenHandlerOptions
-{
-}
-
 public static class AuthenticationServiceCollectionExtensions
 {
     public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, IJwtAuthenticationOptions jwtAuthenticationOptions)
