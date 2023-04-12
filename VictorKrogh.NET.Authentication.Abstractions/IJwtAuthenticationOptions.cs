@@ -1,5 +1,5 @@
 ﻿namespace VictorKrogh.NET.Authentication.DependencyInjection;
 
-public interface IJwtAuthenticationOptions : IJwtTokenHandlerOptions
+public interface IJwtAuthenticationOptions : IJwtTokenHandlerOptions, IJwtRefreshTokenHandlerOptions
 {
 }
