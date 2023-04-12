@@ -10,7 +10,7 @@ public static class AuthenticationServiceCollectionExtensions
 {
     public static IServiceCollection AddPasswordHasher(this IServiceCollection services, IPasswordHasherOptions passwordHasherOptions)
     {
-        services.AddScoped<IPasswordHasherService, PasswordHasherService>();
+        services.AddScoped<IPasswordHasherService, PasswordHasherService>(x => new PasswordHasherService(passwordHasherOptions));
 
         return services;
     }
