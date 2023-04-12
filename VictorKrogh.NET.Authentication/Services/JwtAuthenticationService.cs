@@ -9,8 +9,8 @@ public interface IJwtAuthenticationService
 
 internal sealed class JwtAuthenticationService : IJwtAuthenticationService
 {
-	public JwtAuthenticationService(IJwtTokenHandler jwtTokenHandler, IJwtRefreshTokenHandler jwtRefreshTokenHandler)
-	{
+    public JwtAuthenticationService(IJwtTokenHandler jwtTokenHandler, IJwtRefreshTokenHandler jwtRefreshTokenHandler)
+    {
         JwtTokenHandler = jwtTokenHandler;
         JwtRefreshTokenHandler = jwtRefreshTokenHandler;
     }

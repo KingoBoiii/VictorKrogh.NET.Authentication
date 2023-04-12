@@ -15,7 +15,7 @@ internal sealed class JwtRefreshTokenHandler : IJwtRefreshTokenHandler
     {
         JwtRefreshTokenHandlerOptions = jwtRefreshTokenHandlerOptions;
     }
-    
+
     private IJwtRefreshTokenHandlerOptions JwtRefreshTokenHandlerOptions { get; }
 
     public string CreateToken()
