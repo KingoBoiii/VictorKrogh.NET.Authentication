@@ -2,7 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using VictorKrogh.NET.Authentication.Handlers;
 using VictorKrogh.NET.Authentication.Services;
 
 namespace VictorKrogh.NET.Authentication.DependencyInjection;
@@ -18,10 +17,6 @@ public static class AuthenticationServiceCollectionExtensions
 
     public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, IJwtAuthenticationOptions jwtAuthenticationOptions)
     {
-        services.AddTransient<IJwtTokenHandler, JwtTokenHandler>();
-        services.AddTransient<IJwtRefreshTokenHandler, JwtRefreshTokenHandler>();
-        services.AddTransient<IJwtAuthenticationService, JwtAuthenticationService>();
-
         services
             .AddAuthentication(x =>
             {
