@@ -2,11 +2,19 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using VictorKrogh.NET.Authentication.Services;
 
 namespace VictorKrogh.NET.Authentication.DependencyInjection;
 
 public static class AuthenticationServiceCollectionExtensions
 {
+    public static IServiceCollection AddPasswordHasher(this IServiceCollection services, IPasswordHasherOptions passwordHasherOptions)
+    {
+        services.AddScoped<IPasswordHasherService, PasswordHasherService>();
+
+        return services;
+    }
+
     public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, IJwtAuthenticationOptions jwtAuthenticationOptions)
     {
         services
